@@ -11,11 +11,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 150vh;
             background-color: #87ceeb; /* Default background color (light blue) */
             font-size: large;
-            color: black;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: #333; /* Dark text color */
+            font-family: Arial, sans-serif;
             animation: backgroundEffect 10s infinite; /* Animation for morning and evening effect */
         }
         
@@ -30,52 +30,96 @@
 
         .diamond-container {
             position: relative;
-            width: 300px; /* Adjust the width as needed */
-            height: 600px; /* Adjust the height as needed */
-            background: rgba(255, 255, 255, 0.7); /* Light transparent white */
-            border-radius: 10px;
+            width: 500px; /* Adjust the width as needed */
+            height: 1000px; /* Adjust the height as needed */
+            background: rgba(255, 255, 255, 0.8); /* Light transparent white */
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
         }
 
         .diamond-container:before {
             content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 50px; /* Adjust the position as needed */
+            left: -50px; /* Adjust the position as needed */
+            width: 680px; /* Adjust the width as needed */
+            height: 700px; /* Adjust the height as needed */
             background: inherit;
-            transform: rotate(-35deg);
+            transform: rotate(-45deg);
+            filter: blur(20px); /* Apply blur effect */
+            opacity: 0.5; /* Reduce opacity */
         }
 
-        #buyerRegistrationForm {
-            position: relative;
+        #SellerRegistrationForm {
+            position: absolute;
             z-index: 1;
-            padding: 20px;
+            padding: 30px;
             box-sizing: border-box;
             text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #333; /* Dark text color */
+            font-size: 32px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555; /* Lighter text color */
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc; /* Light border */
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #1e90ff; /* Dark blue */
+            color: #fff; /* White text */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #007bff; /* Lighter blue on hover */
         }
     </style>
 </head>
 <body>
     <div class="diamond-container">
-        <form id="buyerRegistrationForm">
-            <h1>Buyer Registration</h1>
-            <label for="name">Enter Name:</label><br>
+        <form id="SellerRegistrationForm">
+            <h1>Seller Registration</h1>
+            <label for="name">Enter Name:</label>
             <input type="text" id="name" name="name" required><br>
-            <label for="age">Enter Age:</label><br>
+            <label for="age">Enter Age:</label>
             <input type="number" id="age" name="age" required><br>
-            <label for="city">Enter City:</label><br>
+            <label for="city">Enter City:</label>
             <input type="text" id="city" name="city" required><br>
-            <label for="email">Enter Email Address:</label><br>
+            <label for="email">Enter Email Address:</label>
             <input type="email" id="email" name="email" required><br>
-            <label for="aadharNo">Enter Aadhar No:</label><br>
+            <label for="aadharNo">Enter Aadhar No:</label>
             <input type="text" id="aadharNo" name="aadharNo" required><br>
-            <label for="panNo">Enter Pan no:</label><br>
+            <label for="panNo">Enter Pan no:</label>
             <input type="text" id="panNo" name="panNo" required><br>
-            <label for="aadharCard">Add your Aadhar Card (PDF Format):</label><br>
+            <label for="aadharCard">Add your Aadhar Card (PDF Format):</label>
             <input type="file" id="aadharCard" name="aadharCard" required accept=".pdf"><br>
-            <input type="submit" value="Register as Buyer">
+            <label for="LandOwnerShip">Add your Land Ownership doc (PDF Format):</label>
+            <input type="file" id="LandOwnerShip" name="LandOwnerShip" required accept=".pdf"><br>
+            <input type="submit" value="Register as Seller">
         </form>
     </div>
 </body>
