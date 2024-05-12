@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLOCKCHAIN PROJECT</title>
+    <title>BLOCKCHAIN PROJECT - Buyer Registration</title>
     <style>
         body {
             margin: 0;
@@ -11,115 +11,122 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 150vh;
-            background-color: #87ceeb; /* Default background color (light blue) */
-            font-size: large;
-            color: #333; /* Dark text color */
+            min-height: 100vh;
+            background-color: #87ceeb;
             font-family: Arial, sans-serif;
-            animation: backgroundEffect 10s infinite; /* Animation for morning and evening effect */
+            animation: backgroundEffect 10s infinite;
         }
         
         @keyframes backgroundEffect {
             0%, 100% {
-                background-color: #87ceeb; /* Light blue (morning) */
+                background-color: #87ceeb;
             }
             50% {
-                background-color: #1e90ff; /* Dark blue (evening) */
+                background-color: #1e90ff;
             }
         }
 
         .diamond-container {
             position: relative;
-            width: 500px; /* Adjust the width as needed */
-            height: 1000px; /* Adjust the height as needed */
-            background: rgba(255, 255, 255, 0.8); /* Light transparent white */
+            width: 500px;
+            height: 800px;
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
 
         .diamond-container:before {
             content: "";
             position: absolute;
-            top: 50px; /* Adjust the position as needed */
-            left: -50px; /* Adjust the position as needed */
-            width: 680px; /* Adjust the width as needed */
-            height: 700px; /* Adjust the height as needed */
+            top: -50px;
+            left: -50px;
+            width: 650px;
+            height: 500px;
             background: inherit;
-            transform: rotate(-45deg);
-            filter: blur(20px); /* Apply blur effect */
-            opacity: 0.5; /* Reduce opacity */
+            transform: rotate(45deg);
+            filter: blur(20px);
+            opacity: 0.5;
         }
 
-        #SellerRegistrationForm {
+        #BuyerRegistrationForm {
             position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             z-index: 1;
+            width: 80%;
             padding: 30px;
             box-sizing: border-box;
             text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
             margin-bottom: 20px;
-            color: #333; /* Dark text color */
-            font-size: 32px;
+            color: #333;
+            font-size: 28px;
         }
 
         label {
             display: block;
             margin-bottom: 10px;
             font-weight: bold;
-            color: #555; /* Lighter text color */
+            color: #555;
+            font-size: 16px;
+            text-align: left;
         }
 
         input[type="text"],
         input[type="number"],
         input[type="email"],
         input[type="file"] {
-            width: 100%;
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 20px;
-            border: 1px solid #ccc; /* Light border */
+            border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
+            font-size: 16px;
         }
 
         input[type="submit"] {
-            background-color: #1e90ff; /* Dark blue */
-            color: #fff; /* White text */
+            background-color: #1e90ff;
+            color: #fff;
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {
-            background-color: #007bff; /* Lighter blue on hover */
+            background-color: #007bff;
         }
     </style>
 </head>
 <body>
     <div class="diamond-container">
-        <form id="SellerRegistrationForm">
-            <h1>Seller Registration</h1>
-            <label for="name">Enter Name:</label>
+        <form id="BuyerRegistrationForm">
+            <h1>Buyer Registration</h1>
+            <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
-            <label for="age">Enter Age:</label>
+            <label for="age">Age:</label>
             <input type="number" id="age" name="age" required><br>
-            <label for="city">Enter City:</label>
+            <label for="city">City:</label>
             <input type="text" id="city" name="city" required><br>
-            <label for="email">Enter Email Address:</label>
+            <label for="email">Email Address:</label>
             <input type="email" id="email" name="email" required><br>
-            <label for="aadharNo">Enter Aadhar No:</label>
+            <label for="aadharNo">Aadhar No:</label>
             <input type="text" id="aadharNo" name="aadharNo" required><br>
-            <label for="panNo">Enter Pan no:</label>
+            <label for="panNo">Pan no:</label>
             <input type="text" id="panNo" name="panNo" required><br>
-            <label for="aadharCard">Add your Aadhar Card (PDF Format):</label>
+            <label for="aadharCard">Aadhar Card (PDF Format):</label>
             <input type="file" id="aadharCard" name="aadharCard" required accept=".pdf"><br>
-            <label for="LandOwnerShip">Add your Land Ownership doc (PDF Format):</label>
-            <input type="file" id="LandOwnerShip" name="LandOwnerShip" required accept=".pdf"><br>
-            <input type="submit" value="Register as Seller">
+            <input type="submit" value="Register as Buyer">
         </form>
     </div>
 </body>
